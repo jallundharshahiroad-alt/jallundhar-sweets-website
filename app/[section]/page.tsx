@@ -8,7 +8,8 @@ import SweetsAisleNav from "@/components/SweetsAisleNav";
 import SectionAisleNav from "@/components/SectionAisleNav";
 import PromoBannersForPage from "@/components/PromoBannersForPage";
 import { loadStoreVisibility } from "@/lib/storeVisibility";
-import { effectivePlacementKey } from "@/lib/itemPlacement";
+import { itemsForPlacement } from "@/lib/itemPlacement";
+import { applyMenuOverrides } from "@/lib/loadAisleItems";
 import { beveragePreviewItems, tagBeverageItems } from "@/lib/posBeveragePreview";
 
 export const revalidate = 60;
@@ -35,9 +36,11 @@ export default async function SectionPage({ params }: { params: { section: strin
   if (!meta) notFound();
   if (meta.hidden) notFound();
 
-  const [categories, knownProducts] = await Promise.all([
+  const [categories, overrides] = await Promise.all([
     loadMenu(),
-    meta.slug === "beverage" ? loadAllMenuItems() : Promise.resolve([]),
+    meta.slug === "sweets" || meta.slug === "bakery"
+      ? Promise.resolve([])
+      : loadAllMenuItems(),
   ]);
   const category = categories.find((entry) => entry.slug === meta.slug);
   const sectionItems =
@@ -45,11 +48,15 @@ export default async function SectionPage({ params }: { params: { section: strin
       ? []
       : meta.slug === "beverage"
       ? category?.items ?? []
-      : (category?.items ?? []).filter(
-          (item) => effectivePlacementKey(item, visibility) === meta.slug
+      : applyMenuOverrides(
+          itemsForPlacement(meta.slug, visibility, category?.items ?? []),
+          overrides,
+          false,
+          visibility.hiddenItemIds,
+          visibility.bestsellerIds
         );
   const items = meta.slug === "beverage"
-    ? beveragePreviewItems(tagBeverageItems(sectionItems), undefined, knownProducts)
+    ? beveragePreviewItems(tagBeverageItems(sectionItems), undefined, overrides)
     : sectionItems;
   const visibleAisleCount = listAisles(visibility, meta.slug).filter((aisle) => !aisle.hidden).length;
 

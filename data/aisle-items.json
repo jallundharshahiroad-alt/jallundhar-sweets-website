@@ -9662,5 +9662,87 @@
       "is_available": true,
       "sort_order": 9
     }
+  ],
+  "baby-celebrations": [
+    {
+      "id": "baby-celebrations-gift-box-1-small",
+      "category_id": "baby-celebrations",
+      "name": "Gift Box 1 (Small)",
+      "description": null,
+      "price": 150,
+      "image_url": "/products/baby-celebrations/gift-box-1.webp",
+      "is_available": true,
+      "sort_order": 1
+    },
+    {
+      "id": "baby-celebrations-its-a-boy-box-small",
+      "category_id": "baby-celebrations",
+      "name": "It's a Boy Gift Box (Small)",
+      "description": null,
+      "price": 150,
+      "image_url": "/products/baby-celebrations/its-a-boy-box.webp",
+      "is_available": true,
+      "sort_order": 2
+    },
+    {
+      "id": "baby-celebrations-its-a-boy-box-2-large",
+      "category_id": "baby-celebrations",
+      "name": "It's a Boy Gift Box 2 (Large)",
+      "description": null,
+      "price": 220,
+      "image_url": "/products/baby-celebrations/its-a-boy-box-2.webp",
+      "is_available": true,
+      "sort_order": 3
+    },
+    {
+      "id": "baby-celebrations-its-a-boy-box-3-large",
+      "category_id": "baby-celebrations",
+      "name": "It's a Boy Gift Box 3 (Large)",
+      "description": null,
+      "price": 220,
+      "image_url": "/products/baby-celebrations/its-a-boy-box-3.webp",
+      "is_available": true,
+      "sort_order": 4
+    },
+    {
+      "id": "baby-celebrations-its-a-girl-box-small",
+      "category_id": "baby-celebrations",
+      "name": "It's a Girl Gift Box (Small)",
+      "description": null,
+      "price": 150,
+      "image_url": "/products/baby-celebrations/its-a-girl.webp",
+      "is_available": true,
+      "sort_order": 5
+    },
+    {
+      "id": "baby-celebrations-its-a-girl-box-2-small",
+      "category_id": "baby-celebrations",
+      "name": "It's a Girl Gift Box 2 (Small)",
+      "description": null,
+      "price": 150,
+      "image_url": "/products/baby-celebrations/its-a-girl-2.webp",
+      "is_available": true,
+      "sort_order": 6
+    },
+    {
+      "id": "baby-celebrations-its-a-girl-box-3-large",
+      "category_id": "baby-celebrations",
+      "name": "It's a Girl Gift Box 3 (Large)",
+      "description": null,
+      "price": 220,
+      "image_url": "/products/baby-celebrations/its-a-girl-3.webp",
+      "is_available": true,
+      "sort_order": 7
+    },
+    {
+      "id": "baby-celebrations-its-a-girl-box-4-large",
+      "category_id": "baby-celebrations",
+      "name": "It's a Girl Gift Box 4 (Large)",
+      "description": null,
+      "price": 220,
+      "image_url": "/products/baby-celebrations/its-a-girl-4.webp",
+      "is_available": true,
+      "sort_order": 8
+    }
   ]
 }
